@@ -1,0 +1,126 @@
+# Book E-Commerce System
+
+This is a simple Book E-Commerce System built with HTML, CSS, JavaScript, PHP, and SQL. The system features two panels:
+
+1. **Admin Panel:**
+   - Admin can manage books (add, edit, delete).
+   - View and manage customer orders.
+   - Update book availability and prices.
+
+2. **User Panel:**
+   - Users can browse and purchase books.
+   - Book details include title, author, price, and availability.
+   - Integrated Stripe payment system (pending implementation).
+
+---
+
+## Features
+
+- **Admin Panel**
+  - Manage Books: Add, update, and delete books from the catalog.
+  - View Orders: View customer order details.
+
+- **User Panel**
+  - Browse Books: View available books with detailed information.
+  - Purchase Books: Add books to the cart and proceed to checkout.
+  - Payment Integration: Stripe payment integration (to be completed).
+
+---
+
+## Technologies Used
+
+- **Frontend:**
+  - HTML
+  - CSS
+  - JavaScript
+
+- **Backend:**
+  - PHP
+
+- **Database:**
+  - MySQL
+
+---
+
+## Installation Guide
+
+### Prerequisites
+
+1. Install [XAMPP](https://www.apachefriends.org/) or any other local server.
+2. Have a code editor (e.g., VS Code).
+3. Stripe API credentials (for payment integration).
+
+### Steps
+
+1. Clone the repository or download the project.
+2. Place the project folder in the `htdocs` directory (for XAMPP).
+3. Import the `book_system.sql` file into your MySQL database.
+4. Update the database connection in `config.php`:
+
+   ```php
+   $host = "localhost";
+   $username = "root";
+   $password = "";
+   $database = "book_system";
+   ```
+
+5. Start the Apache and MySQL servers from the XAMPP control panel.
+6. Open your browser and navigate to `http://localhost/book-system`.
+
+---
+
+## Stripe Integration
+
+1. Create a Stripe account at [https://stripe.com](https://stripe.com).
+2. Get your **Publishable Key** and **Secret Key** from the Stripe Dashboard.
+3. Add these keys to the `stripe_config.php` file:
+
+   ```php
+   define('STRIPE_API_KEY', 'your-secret-key');
+   define('STRIPE_PUBLISHABLE_KEY', 'your-publishable-key');
+   ```
+
+4. Ensure the payment workflow is functional after completing the Stripe integration.
+
+---
+
+## Folder Structure
+
+```
+project-folder/
+├── admin/
+│   ├── manage_books.php
+│   ├── view_orders.php
+│   └── ...
+├── user/
+│   ├── browse_books.php
+│   ├── cart.php
+│   ├── checkout.php
+│   └── ...
+├── assets/
+│   ├── css/
+│   ├── js/
+│   ├── images/
+├── config/
+│   └── config.php
+├── stripe/
+│   └── stripe_config.php
+├── book_system.sql
+└── README.md
+```
+
+---
+
+## Future Enhancements
+
+- Complete the Stripe payment integration.
+- Add a user login/registration system.
+- Implement search and filter options for books.
+- Enhance UI/UX design.
+- Add order tracking for users.
+
+---
+
+## License
+
+This project is open-source and available for personal and educational purposes. Contributions are welcome!
